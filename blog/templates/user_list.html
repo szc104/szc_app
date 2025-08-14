@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<table border="1">
+    <tr><td>ID</td><td>Name</td><td>Password</td><td>OP</td></tr>
+{% for user in users %}
+<tr>
+    <td>{{user[0]}}</td>
+    <td>{{user[1]}}</td>
+    <td>{{user[2]}}</td>
+
+    <td><a href="{{url_for('user_delete',id=user[0])}}">Delete</a></td>>
+</tr>>
+{%endfor%}
+</table>
+
+{% endblock %}
