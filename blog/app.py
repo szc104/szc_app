@@ -187,7 +187,7 @@ def index():
     conn.close()
 
     return render_template(
-        "index.html",
+        "../index.html",
         blogs=blogs_with_comments,  # 传递整合后的数据
         page=page,
         songs=songs
