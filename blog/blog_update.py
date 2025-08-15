@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("blog.db.db")
+conn = sqlite3.connect("blog.db")
 cur = conn.cursor()
 def do_update():
     cur.execute("SELECT rowid, title, content, uid, created_at FROM blog ORDER BY rowid")
