@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+
+<h1>注册</h1>>
+<span style="color: red; ">{{error}}</span>
+<form action="{{url_for('do_register')}}" method="POST">
+    <label>
+        登录名:
+        <input type="text" name="name">
+    </label><br>
+    <label>
+        密码:
+        <input type="password" name="password">
+    </label><br>
+    <label>
+        确认密码:
+        <input type="password" name="password2">
+
+
+    </label><br>
+    <input type="submit" value="注册">
+</form>
+
+</body>
+</html>

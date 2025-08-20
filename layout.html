@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% block head %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+
+</head>
+<body>
+<a href="{{url_for('index')}}">首页</a>
+
+<a href="{{url_for('logout')}}" style="color:#000dff;margin-right: 15px;text-decoration: none;">退出登录</a>
+
+{% endblock %}
+
+
+{% block content %}
+content
+{% endblock %}
+
+
+
+{% block foot %}
+</body>
+<hr style="height: 3px; border: none; background-color: #333;">
+</html>
+{% endblock %}
+
+
+
+
+
+
+
+

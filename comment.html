@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COMMENT</title>
+</head>
+<body>
+<a href="{{url_for('index')}}">返回</a>
+<form action="{{url_for('do_comment')}}" method="post">
+    <hr style="height: 3px; border: none; background-color: #333;">
+    <h3>请输入评论的内容</h3>
+    <input type="hidden" name="blog_id" value="{{blog_id}}">
+    <textarea name="content" required placeholder="请输入评论内容..."></textarea>
+    <input type="submit" value="提交评论">
+</form>

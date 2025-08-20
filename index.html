@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" >
 <head>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
@@ -151,14 +151,20 @@
 
         <!-- 评论区 -->
         <div class="comment-section">
-            <h2>评论区</h2>
-            <div class="comment-list">
-                <h3>评论列表</h3>
+           <h2>评论区</h2>
+<div class="comment-list">
+    <h3>评论列表</h3>
                 <div class="comments-container">
                     {% if item.comments %}
                         {% for comment in item.comments %}
                             <div class="comment-item">
-                                <div class="comment-user">{{ comment[2] }}</div>
+                                <div class="comment-user">{{ comment[2] }}
+                                    <div>
+                                        {% if current_user.is_authenticated and (current_user.id == comment[3] or current_user.is_admin) %}
+                                        <a href="{{ url_for('delete_comment', id=comment[0]) }}">删除</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
                                 <div class="comment-content">{{ comment[0] }}</div>
                                 <div class="comment-time">{{ comment[1] }}</div>
                             </div>
@@ -167,7 +173,7 @@
                         <div class="no-comments">暂无评论</div>
                     {% endif %}
                 </div>
-            </div>
+</div>
         </div>
     </div>
     <hr class="left-half-hr">
